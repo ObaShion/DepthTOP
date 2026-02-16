@@ -6,8 +6,26 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9B9254842F42FF93005F2C6C /* DepthTOP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B9254832F42FF93005F2C6C /* DepthTOP.cpp */; };
+		9B9254862F431BCF005F2C6C /* DepthTOP.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9B9254852F431BCF005F2C6C /* DepthTOP.mm */; };
+		9B9254892F431C97005F2C6C /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9254882F431C97005F2C6C /* CoreML.framework */; };
+		9B92548B2F431CA1005F2C6C /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B92548A2F431CA1005F2C6C /* Vision.framework */; };
+		9B92548D2F431CA8005F2C6C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B92548C2F431CA8005F2C6C /* CoreVideo.framework */; };
+		9B92548F2F431D83005F2C6C /* DepthAnythingV2SmallF16.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 9B92548E2F431D83005F2C6C /* DepthAnythingV2SmallF16.mlpackage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		9B0064FB2F42F90800815855 /* DepthTOP.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DepthTOP.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0064FB2F42F90800815855 /* DepthTOP.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DepthTOP.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4170592F42FAFC00D439A4 /* CPlusPlus_Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPlusPlus_Common.h; sourceTree = "<group>"; };
+		9B41705A2F42FAFC00D439A4 /* TOP_CPlusPlusBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOP_CPlusPlusBase.h; sourceTree = "<group>"; };
+		9B41705B2F42FB8800D439A4 /* DepthTOP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DepthTOP.h; sourceTree = "<group>"; };
+		9B9254832F42FF93005F2C6C /* DepthTOP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DepthTOP.cpp; sourceTree = "<group>"; };
+		9B9254852F431BCF005F2C6C /* DepthTOP.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DepthTOP.mm; sourceTree = "<group>"; };
+		9B9254882F431C97005F2C6C /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		9B92548A2F431CA1005F2C6C /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
+		9B92548C2F431CA8005F2C6C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		9B92548E2F431D83005F2C6C /* DepthAnythingV2SmallF16.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = DepthAnythingV2SmallF16.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -15,6 +33,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B92548D2F431CA8005F2C6C /* CoreVideo.framework in Frameworks */,
+				9B92548B2F431CA1005F2C6C /* Vision.framework in Frameworks */,
+				9B9254892F431C97005F2C6C /* CoreML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -24,6 +45,8 @@
 		9B0064F22F42F90800815855 = {
 			isa = PBXGroup;
 			children = (
+				9B9254812F42FEDD005F2C6C /* DepthTOP */,
+				9B9254872F431C96005F2C6C /* Frameworks */,
 				9B0064FC2F42F90800815855 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -31,9 +54,32 @@
 		9B0064FC2F42F90800815855 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B0064FB2F42F90800815855 /* DepthTOP.bundle */,
+				9B0064FB2F42F90800815855 /* DepthTOP.plugin */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9B9254812F42FEDD005F2C6C /* DepthTOP */ = {
+			isa = PBXGroup;
+			children = (
+				9B92548E2F431D83005F2C6C /* DepthAnythingV2SmallF16.mlpackage */,
+				9B4170592F42FAFC00D439A4 /* CPlusPlus_Common.h */,
+				9B41705A2F42FAFC00D439A4 /* TOP_CPlusPlusBase.h */,
+				9B41705B2F42FB8800D439A4 /* DepthTOP.h */,
+				9B9254832F42FF93005F2C6C /* DepthTOP.cpp */,
+				9B9254852F431BCF005F2C6C /* DepthTOP.mm */,
+			);
+			path = DepthTOP;
+			sourceTree = "<group>";
+		};
+		9B9254872F431C96005F2C6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B92548C2F431CA8005F2C6C /* CoreVideo.framework */,
+				9B92548A2F431CA1005F2C6C /* Vision.framework */,
+				9B9254882F431C97005F2C6C /* CoreML.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,7 +101,7 @@
 			packageProductDependencies = (
 			);
 			productName = DepthTOP;
-			productReference = 9B0064FB2F42F90800815855 /* DepthTOP.bundle */;
+			productReference = 9B0064FB2F42F90800815855 /* DepthTOP.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -106,6 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B92548F2F431D83005F2C6C /* DepthAnythingV2SmallF16.mlpackage in Sources */,
+				9B9254842F42FF93005F2C6C /* DepthTOP.cpp in Sources */,
+				9B9254862F431BCF005F2C6C /* DepthTOP.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,12 +290,13 @@
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-stdlib=libc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ObaShion.DepthTOP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
 		};
@@ -262,12 +312,13 @@
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-stdlib=libc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ObaShion.DepthTOP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = plugin;
 			};
 			name = Release;
 		};
