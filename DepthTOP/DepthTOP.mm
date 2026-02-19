@@ -161,12 +161,34 @@ void DepthTOP::execute(TOP_Output *output, const OP_Inputs *inputs, void *reserv
             CVPixelBufferUnlockBaseAddress(outBuffer, kCVPixelBufferLock_ReadOnly);
             
             TOP_UploadInfo uploadInfo;
+            uploadInfo.colorBufferIndex = 0;
             uploadInfo.bufferOffset = 0;
             uploadInfo.textureDesc.width = outWidth;
             uploadInfo.textureDesc.height = outHeight;
             uploadInfo.textureDesc.texDim = OP_TexDim::e2D;
             uploadInfo.textureDesc.pixelFormat = OP_PixelFormat::RGBA32Float;
             output->uploadBuffer(&buf, uploadInfo, nullptr);
+            
+            uint64_t colorSizeBytes = inWidth * inHeight * 4;
+            OP_SmartRef<TOP_Buffer> colorBuf = myContext->createOutputBuffer(colorSizeBytes, TOP_BufferFlags::None, nullptr);
+            
+            if (colorBuf->data && inputData)
+            {
+                memcpy(colorBuf->data, inputData, colorSizeBytes);
+            }
+            
+            TOP_UploadInfo colorUploadInfo;
+            colorUploadInfo.colorBufferIndex = 1;
+            colorUploadInfo.bufferOffset = 0;
+            colorUploadInfo.textureDesc.width = inWidth;
+            colorUploadInfo.textureDesc.height = inHeight;
+            colorUploadInfo.textureDesc.texDim = OP_TexDim::e2D;
+            colorUploadInfo.textureDesc.pixelFormat = OP_PixelFormat::BGRA8Fixed;
+            
+            colorUploadInfo.firstPixel = TOP_FirstPixel::TopLeft;
+            
+            output->uploadBuffer(&colorBuf, colorUploadInfo, nullptr);
+            
             return;
         }
     }

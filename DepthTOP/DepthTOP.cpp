@@ -59,6 +59,7 @@ void DepthTOP::getGeneralInfo(TD::TOP_GeneralInfo *ginfo, const TD::OP_Inputs *i
 
 bool DepthTOP::getOutputFormat(TD::TOP_OutputFormat *format, const TD::OP_Inputs *inputs, TD::TOP_Context*, int outputIndex)
 {
+    format->numColorBuffers = 2;
     return false;
 }
 
